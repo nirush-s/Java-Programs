@@ -1,0 +1,43 @@
+package Java;
+
+import org.testng.annotations.Test;
+
+public class Top5RepeatingWords 
+{
+
+	public static void main(String[] args)
+	{
+		String str = "aeiabcebicbaya";
+		
+		char[] arr = str.toCharArray();
+		
+		List<Character> list = new ArrayList<Character>();
+		
+		int maxCount = 1;
+		
+		//list.add(0,arr[0]);
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			int count = 0;
+			for(int j=i;j<arr.length;j++)
+			{
+				if(arr[i]==arr[j])
+				{
+					count++;
+				}
+			}
+			
+			if(count>maxCount)
+			{
+				maxCount = count;
+				list.add(0,arr[i]);
+			}
+		}
+		
+		System.out.println(list.get(0)+"="+maxCount);
+
+		
+	}
+	
+}
